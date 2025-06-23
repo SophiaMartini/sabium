@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos - Sabium</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="cursos.css">
+    <script src="cursos.js" defer></script>
+</head>
+<body>
+<!--navbar-->
+    <nav id="sidebar">
+        <div id="sidebar_content">
+          <div id="logo">
+            <img src="assets/logosozinha.png" alt="logo">
+          </div>
+            
+            <ul id="side_items">
+                <li class="side-item active">
+                    <a href="forum.html">
+                        <i class="fa-solid fa-message"></i>
+                        <span class="item-description">
+                            Fórum
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item">
+                    <a href="comunidades.html">
+                        <i class="fa-solid fa-user-group"></i>
+                        <span class="item-description">
+                            Comunidades
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item">
+                    <a href="cursos.html">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                        <span class="item-description">
+                            Cursos
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item">
+                    <a href="notificacoes.html">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="item-description">
+                            Notificações
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item">
+                    <a href="perfil.html">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span class="item-description">
+                            Perfil
+                        </span>
+                    </a>
+                </li>
+                <li class="side-item">
+                        <a href="configuracoes.html">
+                            <i class="fa-solid fa-gear"></i>
+                            <span class="item-description">
+                                Configurações
+                            </span>
+                        </a>
+                </li>
+        </div>
+                </div>
+            </ul>
+    
+            <button id="open_btn">
+                <i id="open_btn_icon" class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+       
+        <div id="logout">
+            <button id="logout_btn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="item-description">
+                    Logout
+                </span>
+            </button>
+        </div>
+         <div id="user">
+                <img src="assets/OIP.webp" id="user_avatar" alt="Avatar">
+    
+                <p id="user_infos">
+                    <span class="item-description">
+                        Arrascaeta
+                    </span>
+                    <span class="item-description">
+                        @arrasca_confeiteiro
+                    </span>
+                </p>
+            </div>
+    </nav>
+<!--o resto da tela com os conteudo do descobrir e do meus cursos-->
+ <main style="margin-left: 240px; padding: 32px;">
+
+    <!-- Barra de busca e os filtros que eu achei legal a ideia-->
+    <section class="search-filter">
+      <input type="text" class="search-input" placeholder="Buscar cursos...">
+      <select class="filter-select">
+        <option value="">Todas as categorias</option>
+        <option value="frontend">Front-end</option>
+        <option value="backend">Back-end</option>
+        <option value="design">Design</option>
+        <option value="dados">Ciência de Dados</option>
+      </select>
+    </section>
+
+    <!-- Meus Cursos -->
+    <section class="courses-section" aria-label="Meus Cursos">
+      <h1 class="titulo">Meus Cursos</h1>
+      <div class="courses-grid">
+        <!-- Card exemplo -->
+        <div class="course-card">
+          <img src="https://source.unsplash.com/400x200/?learning" alt="Curso comprado" class="course-thumb">
+          <div class="course-info">
+            <div class="course-title">HTML Intermediário</div>
+            <div class="course-instructor">com Beatriz Souza</div>
+            <div class="course-tags">
+              <span>HTML</span><span>Web</span>
+            </div>
+            <button class="course-btn">Acessar curso</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cursos para Descobrir -->
+    <section class="courses-section" aria-label="Descobrir novos cursos">
+      <h1 class="titulo">Descubra Novos Cursos</h1>
+      <div class="courses-grid">
+        <!-- Seus cards de curso copiados aqui -->
+        <!-- [colar os 3 blocos que você mandou aqui] -->
+        <!-- 👇 exemplo (vou colar 1 pra ilustrar, mas você pode colar os 3 certinhos depois) -->
+        <div class="course-card">
+          <img src="https://source.unsplash.com/400x200/?code" alt="Curso Front-end" class="course-thumb">
+          <div class="course-info">
+            <div class="course-title">Introdução ao Front-end</div>
+            <div class="course-instructor">com Ana Júlia</div>
+            <div class="course-tags">
+              <span>HTML</span><span>CSS</span><span>Responsivo</span>
+            </div>
+            <button class="course-btn">Ver mais</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>    
+</body>
+</html>

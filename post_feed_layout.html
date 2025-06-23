@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fórum - Feed com Post e Popup Novo Post</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="post.css">
+<script src="post.js" defer></script>
+</head>
+<body>
+
+<!--navbar-->
+    <nav id="sidebar">
+        <div id="sidebar_content">
+          <div id="logo">
+            <img src="assets/logosozinha.png" alt="logo">
+          </div>
+            
+            <ul id="side_items">
+                <li class="side-item active">
+                    <a href="forum.html">
+                        <i class="fa-solid fa-message"></i>
+                        <span class="item-description">
+                            Fórum
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item">
+                    <a href="comunidades.html">
+                        <i class="fa-solid fa-user-group"></i>
+                        <span class="item-description">
+                            Comunidades
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item">
+                    <a href="cursos.html">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                        <span class="item-description">
+                            Cursos
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item">
+                    <a href="notificacoes.html">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="item-description">
+                            Notificações
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item">
+                    <a href="perfil.html">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span class="item-description">
+                            Perfil
+                        </span>
+                    </a>
+                </li>
+                <li class="side-item">
+                        <a href="configuracoes.html">
+                            <i class="fa-solid fa-gear"></i>
+                            <span class="item-description">
+                                Configurações
+                            </span>
+                        </a>
+                </li>
+        </div>
+                </div>
+            </ul>
+    
+            <button id="open_btn">
+                <i id="open_btn_icon" class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+       
+        <div id="logout">
+            <button id="logout_btn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="item-description">
+                    Logout
+                </span>
+            </button>
+        </div>
+         <div id="user">
+                <img src="assets/OIP.webp" id="user_avatar" alt="Avatar">
+    
+                <p id="user_infos">
+                    <span class="item-description">
+                        Arrascaeta
+                    </span>
+                    <span class="item-description">
+                        @arrasca_confeiteiro
+                    </span>
+                </p>
+            </div>
+    </nav>
+
+<main> 
+
+<h1 class="titulo">Fórum</h1>
+<div class="main-layout">
+<div class="feed-container" aria-label="Feed do fórum">
+
+  <!--seção do post (pra criar) que fica no topo da tela-->
+  <section class="new-post-fixed" aria-label="Criar novo post">
+    <div class="new-post-header">
+      <img src="assets/OIP.webp" alt="avatar da pessoa" class="avatar" />
+    </div>
+    <textarea id="post-textarea" placeholder="O que você gostaria de falar?" aria-multiline="true" rows="10"
+      ></textarea>
+    <div class="adicionar_postar">
+      <label for="file-input" style="margin-top:4px; cursor:pointer; font-weight:700; color:#2c1e00;">
+        <i class="fa-regular fa-images"></i>
+      </label>
+      <input
+            type="file"
+            id="file-input"
+            multiple
+            accept="image/*,application/pdf"
+            aria-label="Selecionar arquivos para anexar"
+          />
+      <div class="attachments-preview" aria-live="polite" aria-atomic="true"></div>
+      <button id="post-submit-btn" class="post-btn" disabled>Postar</button>
+    </div>
+   
+
+  </section>
+
+  <!-- feed -->
+  
+  <!--esse é o primeiro post, as informação tao tudo no js-->
+  <article class="post" data-post-id="1">
+  
+    <div class="post-header">
+      <div class="user-info">
+        <img src="" alt="guanabara" class="avatar" />
+        <div class="name-username">
+          <span class="name"></span>
+          <span class="username-time"></span>
+        </div>
+      </div>
+      <div class="tags" aria-label="Tags do post">
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div class="post-content">
+      <p></p>
+    </div>
+    <div class="attachments">
+      <img src="" alt="Imagem anexa" class="attachment-img"/>
+      <a href="#" class="attachment-file-link" download="flexbox_tutorial.pdf"></a
+      >
+    </div>
+    <div class="post-actions">
+      <button class="comment-btn" aria-expanded="false" aria-controls="comments-1" aria-label="Comentários">
+         <span class="comment-count"></span>
+      </button>
+      <button class="like-btn" aria-pressed="false" aria-label="Curtir">
+        <i class="fa-regular fa-heart"></i>
+        <span class="like-count"></span>
+      </button>
+      <button class="share-btn" aria-label="Compartilhar post">
+        <i class="fa-solid fa-share"></i>
+      </button>   
+    </div>
+
+    <!--parte dos comentarios-->
+    <section class="comments-section" id="comments-1" aria-label="Comentários do post 1" role="region">
+      <!-- e aq q aparece -->
+      <div class="comment"></div>
+      <div class="comment"></div>
+      <div class="comment"></div>
+
+      <div class="comment-input-container">
+        <input type="text" class="comment-input" placeholder="Escreva um comentário..." aria-label="Escrever comentário"/>
+        <button class="comment-send-btn" disabled>Enviar</button>
+      </div>
+    </section>
+  </article>
+
+  <!--esse aqui é outro post lá que nem tem no canva-->
+  <article class="post" data-post-id="2">
+    <div class="post-header">
+      <div class="user-info">
+        <img src="assets/ribas.webp" alt="Diego Ribas" class="avatar" />
+        <div class="name-username">
+          <span class="name"></span>
+          <span class="username-time"></span>
+        </div>
+      </div>
+      <div class="tags" aria-label="Tags do post">
+        <span>#CSS</span><span>#Iniciante</span>
+      </div>
+    </div>
+    <div class="post-content">
+    </div>
+    <div class="attachments">
+      <img
+        src="https://www.google.com/url?sa=i&url=https%3A%2F%2Ftenor.com%2Fky%2Fview%2Fpedro-pascal-crying-meme-crying-pedro-pascal-pedro-gif-21819516&psig=AOvVaw0_mobwlrzWV4oOhea7Vr4O&ust=1750624703924000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCMD65K6vg44DFQAAAAAdAAAAABAE"
+        alt="meme"
+        class="attachment-img"
+      />
+    </div>
+    <div class="post-actions">
+      <button class="comment-btn" aria-expanded="false" aria-controls="comments-1" aria-label="Comentários">
+         <span class="comment-count"></span>
+      </button>
+      <button class="like-btn" aria-pressed="false" aria-label="Curtir">
+        <i class="fa-regular fa-heart"></i>
+        <span class="like-count"></span>
+      </button>
+      <button class="share-btn" aria-label="Compartilhar post">
+        <i class="fa-solid fa-share"></i>
+      </button>   
+    </div>
+    <!--outra secao de comentario -->
+    <section class="comments-section" id="comments-2" aria-label="Comentários do post 2" role="region">
+      <div class="comment">Vai dar certo! É questão de treino 😎</div>
+      <div class="comment">Você vai pegar o jeito rápido!</div>
+
+      <div class="comment-input-container">
+        <textarea class="comment-input" placeholder="Escreva um comentário..." rows="1"></textarea>
+        <button class="comment-send-btn" disabled>Enviar</button>
+      </div>
+    </section>
+  </article>
+</div>
+<!-- Aqui é a seção de cursos-->
+<section class="courses-section" aria-label="Cursos disponíveis">
+  <h2 style="font-size: 20px; margin-bottom: 16px;">Cursos</h2>
+  <div class="courses-grid">
+    <div class="course-card">
+      <img src="https://source.unsplash.com/400x200/?code" alt="Curso Front-end" class="course-thumb">
+      <div class="course-info">
+        <div class="course-title">Introdução ao Front-end</div>
+        <div class="course-instructor">com Ana Júlia</div>
+        <div class="course-tags">
+          <span>HTML</span><span>CSS</span><span>Responsivo</span>
+        </div>
+        <button class="course-btn">Ver mais</button>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <img src="https://source.unsplash.com/400x200/?javascript" alt="Curso JavaScript" class="course-thumb">
+      <div class="course-info">
+        <div class="course-title">JavaScript do Zero</div>
+        <div class="course-instructor">com Carlos Neto</div>
+        <div class="course-tags">
+          <span>JavaScript</span><span>Lógica</span><span>Web</span>
+        </div>
+        <button class="course-btn">Ver mais</button>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <img src="https://source.unsplash.com/400x200/?ux" alt="Curso UX Design" class="course-thumb">
+      <div class="course-info">
+        <div class="course-title">Fundamentos de UX Design</div>
+        <div class="course-instructor">com Fernanda Dias</div>
+        <div class="course-tags">
+          <span>UX</span><span>Design</span><span>Figma</span>
+        </div>
+        <button class="course-btn">Ver mais</button>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+<!--aquele botão que fica na tela pra quando a pessoa tiver rolado mto poder twittar-->
+<button
+  aria-label="Novo post"
+  class="floating-new-post-btn"
+  id="open-new-post-popup"
+>+</button>
+
+<!-- aqui é o popup ngc -->
+<div class="modal" id="modal-new-post" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+  <div class="modal-content">
+    <button class="modal-close-btn" aria-label="Fechar popup">&times;</button>
+    <textarea
+      id="popup-post-textarea"
+      placeholder="O que voce gostaria de falar?"
+      aria-multiline="true"
+      rows="6"
+    ></textarea>
+
+    <label for="popup-file-input" style="margin-top:8px; cursor:pointer; font-weight:700; color:#2c1e00;">
+      <i class="fa-regular fa-images"></i>
+    </label>
+    <input
+      type="file"
+      id="popup-file-input"
+      multiple
+      accept="image/*,application/pdf"
+      aria-label="Selecionar arquivos para anexar"
+    />
+    <div class="attachments-preview" aria-live="polite" aria-atomic="true" id="popup-attachments-preview"></div>
+    <button id="popup-post-submit-btn" class="post-btn" disabled>Postar</button>
+  </div>
+</div>
+
+
+</main>
+</body>
+</html>
+
+
+
