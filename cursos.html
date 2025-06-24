@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursos - Sabium</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="cursos.css">
-    <script src="cursos.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursos • Sabium</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="cursos.css">
+  <script src="cursos.js" defer></script>
 </head>
 <body>
-<!--navbar-->
+    <!--navbar-->
     <nav id="sidebar">
         <div id="sidebar_content">
           <div id="logo">
@@ -17,7 +17,7 @@
           </div>
             
             <ul id="side_items">
-                <li class="side-item active">
+                <li class="side-item">
                     <a href="forum.html">
                         <i class="fa-solid fa-message"></i>
                         <span class="item-description">
@@ -35,7 +35,7 @@
                     </a>
                 </li>
     
-                <li class="side-item">
+                <li class="side-item active">
                     <a href="cursos.html">
                         <i class="fa-solid fa-book-open-reader"></i>
                         <span class="item-description">
@@ -62,12 +62,12 @@
                     </a>
                 </li>
                 <li class="side-item">
-                        <a href="configuracoes.html">
-                            <i class="fa-solid fa-gear"></i>
-                            <span class="item-description">
-                                Configurações
-                            </span>
-                        </a>
+                    <a href="configuracoes.html">
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="item-description">
+                          Configurações
+                        </span>
+                    </a>
                 </li>
         </div>
                 </div>
@@ -99,13 +99,10 @@
                 </p>
             </div>
     </nav>
-<!--o resto da tela com os conteudo do descobrir e do meus cursos-->
- <main style="margin-left: 240px; padding: 32px;">
-
-    <!-- Barra de busca e os filtros que eu achei legal a ideia-->
+  <main>
     <section class="search-filter">
-      <input type="text" class="search-input" placeholder="Buscar cursos...">
-      <select class="filter-select">
+      <input type="text" class="search-input" id="searchInput" placeholder="buscar cursos...">
+      <select class="filter-select" id="filterSelect">
         <option value="">Todas as categorias</option>
         <option value="frontend">Front-end</option>
         <option value="backend">Back-end</option>
@@ -118,41 +115,85 @@
     <section class="courses-section" aria-label="Meus Cursos">
       <h1 class="titulo">Meus Cursos</h1>
       <div class="courses-grid">
-        <!-- Card exemplo -->
-        <div class="course-card">
-          <img src="https://source.unsplash.com/400x200/?learning" alt="Curso comprado" class="course-thumb">
+        <div class="course-card" data-title="" data-tags="frontend html web">
+          <img src="assets/images.png" alt="Curso comprado" class="course-thumb">
           <div class="course-info">
             <div class="course-title">HTML Intermediário</div>
-            <div class="course-instructor">com Beatriz Souza</div>
+            <div class="course-instructor">com Pedro Alemar</div>
             <div class="course-tags">
               <span>HTML</span><span>Web</span>
             </div>
-            <button class="course-btn">Acessar curso</button>
+            <button class="course-btn" data-tipo="meu">Continuar</button>
+          </div>
+        </div>
+
+        <div class="course-card" data-title="" data-tags="frontend html web">
+          <img src="assets/chorandocss.webp" alt="Curso comprado" class="course-thumb">
+          <div class="course-info">
+            <div class="course-title">Chorando CSS</div>
+            <div class="course-instructor">com Samulso</div>
+            <div class="course-tags">
+              <span>CSS</span><span>Web</span><span>Front-end</span>
+            </div>
+            <button class="course-btn" data-tipo="meu">Continuar</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Cursos para Descobrir -->
+    <!-- Descobrir Novos Cursos -->
     <section class="courses-section" aria-label="Descobrir novos cursos">
       <h1 class="titulo">Descubra Novos Cursos</h1>
       <div class="courses-grid">
-        <!-- Seus cards de curso copiados aqui -->
-        <!-- [colar os 3 blocos que você mandou aqui] -->
-        <!-- 👇 exemplo (vou colar 1 pra ilustrar, mas você pode colar os 3 certinhos depois) -->
-        <div class="course-card">
-          <img src="https://source.unsplash.com/400x200/?code" alt="Curso Front-end" class="course-thumb">
+        <div class="course-card" data-title="" data-tags="frontend html css responsivo">
+          <img src="assets/frontend.png" alt="Curso Front-end" class="course-thumb">
           <div class="course-info">
             <div class="course-title">Introdução ao Front-end</div>
-            <div class="course-instructor">com Ana Júlia</div>
+            <div class="course-instructor">com Brizz
+            </div>
             <div class="course-tags">
               <span>HTML</span><span>CSS</span><span>Responsivo</span>
             </div>
-            <button class="course-btn">Ver mais</button>
+            <button class="course-btn" data-tipo="descobrir">Ver mais</button>
+          </div>
+        </div>
+
+        <div class="course-card" data-title="JavaScript do Zero" data-tags="frontend javascript web">
+          <img src="assets/jsdozero.webp" alt="" class="course-thumb">
+          <div class="course-info">
+            <div class="course-title">JavaScript do Zero</div>
+            <div class="course-instructor">com Pedro Alemar</div>
+            <div class="course-tags">
+              <span>JavaScript</span><span>Lógica</span><span>Web</span>
+            </div>
+            <button class="course-btn" data-tipo="descobrir">Ver mais</button>
+          </div>
+        </div>
+
+        <div class="course-card" data-title="Fundamentos de UX Design" data-tags="design ux figma">
+          <img src="assets/UX-user-experience-o-que-e-principio-sbasicos-cargos-scaled.jpg" alt="Curso UX Design" class="course-thumb">
+          <div class="course-info">
+            <div class="course-title">Fundamentos de UX Design</div>
+            <div class="course-instructor">com Maia</div>
+            <div class="course-tags">
+              <span>UX</span><span>Design</span><span>Figma</span>
+            </div>
+            <button class="course-btn" data-tipo="descobrir">Ver mais</button>
           </div>
         </div>
       </div>
     </section>
-  </main>    
+    <div id="modal" class="modal" style="display: none;">
+    <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <img class="modal-thumb" src="" alt="Imagem do curso">
+    <h2 class="modal-title"></h2>
+    <p class="modal-instructor"></p>
+    <div class="modal-tags"></div>
+    <p id="modal-course-description"></p> 
+    <button class="modal-action-btn"></button>
+  </div>
+</div>
+  </main>
 </body>
 </html>
