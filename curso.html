@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Curso • Sabium</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="curso.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="curso.js" defer></script>
+</head>
+<body>
+<!--navbar-->
+ <nav id="sidebar">
+        <div id="sidebar_content">
+          <div id="logo">
+            <img src="assets/logosozinha.png" alt="logo">
+          </div>
+            
+            <ul id="side_items">
+                <li class="side-item">
+                    <a href="forum.html">
+                        <i class="fa-solid fa-message"></i>
+                        <span class="item-description">
+                            Fórum
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item">
+                    <a href="comunidades.html">
+                        <i class="fa-solid fa-user-group"></i>
+                        <span class="item-description">
+                            Comunidades
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item active">
+                    <a href="cursos.html">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                        <span class="item-description">
+                            Cursos
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item">
+                    <a href="notificacoes.html">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="item-description">
+                            Notificações
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item">
+                    <a href="perfil.html">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span class="item-description">
+                            Perfil
+                        </span>
+                    </a>
+                </li>
+                <li class="side-item">
+                    <a href="configuracoes.html">
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="item-description">
+                          Configurações
+                        </span>
+                    </a>
+                </li>
+        </div>
+                </div>
+            </ul>
+    
+            <button id="open_btn">
+                <i id="open_btn_icon" class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+       
+        <div id="logout">
+            <button id="logout_btn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="item-description">
+                    Logout
+                </span>
+            </button>
+        </div>
+         <div id="user">
+                <img src="assets/OIP.webp" id="user_avatar" alt="Avatar">
+    
+                <p id="user_infos">
+                    <span class="item-description">
+                        Arrascaeta
+                    </span>
+                    <span class="item-description">
+                        @arrasca_confeiteiro
+                    </span>
+                </p>
+            </div>
+    </nav>
+
+   <main class="curso-container">
+
+<!--capad do curso-->
+    <section class="curso-capa">
+      <img src="assets/frontend.png" alt="Capa do curso" />
+    </section>
+
+<!--as ifnormaçõeddo curso la-->
+    <section class="curso-info">
+      <h1 class="curso-titulo">Introdução ao Front-end</h1>
+      <p class="curso-professor">com Brizz</p>
+      <div class="curso-tags">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>Responsivo</span>
+      </div>
+      <p class="curso-descricao">
+        Aprenda os fundamentos do desenvolvimento front-end, incluindo HTML semântico, CSS moderno e boas práticas de responsividade.
+      </p>
+    </section>
+
+    <!-- Lista de Aulas -->
+    <section class="aulas-section">
+      <h2>Conteúdo do Curso</h2>
+      <ul class="lista-aulas">
+        <li>
+          <strong>Aula 1: Introdução ao HTML</strong>
+          <a href="videos/aula1.mp4" target="_blank">Assistir</a>
+        </li>
+        <li>
+          <strong>Aula 2: CSS Básico</strong>
+          <a href="materiais/css_basico.pdf" download>Material PDF</a>
+        </li>
+        <li>
+          <strong>Aula 3: Projeto Prático</strong>
+          <a href="videos/aula3.mp4" target="_blank">Assistir</a>
+          <a href="materiais/projeto.zip" download>Baixar Arquivos</a>
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
