@@ -18,17 +18,6 @@ body {
   overflow-y: auto;
 }
 
-main {
-  padding: 32px; 
-  overflow-y: auto;
-  min-height: 100vh; 
-  width: calc(100vw - 60px);
-  max-width: 100%;
-  box-sizing: border-box;
-  position: relative;
-  z-index: 1;
-  flex: 1;
-}
 
 /* sidebar */
 #sidebar {
@@ -242,16 +231,30 @@ main {
 
 
 /*cursos */
+
+main {
+  margin: 20px 60px;
+  padding: 32px; 
+  overflow-y: auto;
+  min-height: 100vh; 
+  width: calc(100vw - 60px);
+  max-width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
 .courses-section {
-  margin: 40px auto;
+  margin: 20px 60px;
   padding: 0 16px;
-  max-width: 800px;
+  max-width: 100%;
 }
 
 .courses-grid {
   display: grid;
   gap: 18px;
-  grid-template-columns: 1fr;
+  grid-template-columns: 6fr;
 }
 
 @media (min-width: 600px) {
@@ -263,6 +266,24 @@ main {
 @media (min-width: 900px) {
   .courses-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .courses-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1500px) {
+  .courses-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (min-width: 1800px) {
+  .courses-grid {
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 
@@ -349,7 +370,7 @@ main {
 }
 
 .modal-content {
-  background: #fff;
+  background: #ecdbc4;
   padding: 32px;
   border-radius: 12px;
   max-width: 500px;

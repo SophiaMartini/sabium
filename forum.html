@@ -112,7 +112,7 @@
     <div class="new-post-header">
       <img src="assets/OIP.webp" alt="avatar da pessoa" class="avatar" />
     </div>
-    <textarea id="post-textarea" placeholder="O que você gostaria de falar?" aria-multiline="true" rows="10"
+    <textarea id="post-textarea" placeholder="O que você gostaria de falar?" aria-multiline="true" rows="1"
       ></textarea>
     <div class="adicionar_postar">
       <label for="file-input" style="margin-top:4px; cursor:pointer; font-weight:700; color:#2c1e00;">
@@ -179,7 +179,7 @@
       <div class="comment"></div>
 
       <div class="comment-input-container">
-        <input type="text" class="comment-input" placeholder="Escreva um comentário..." aria-label="Escrever comentário"/>
+        <textarea id="comment-textarea" class="comment-textarea" placeholder="Escreva um comentário..." aria-multiline="true" rows="1"></textarea>
         <button class="comment-send-btn" disabled>Enviar</button>
       </div>
     </section>
@@ -232,48 +232,6 @@
     </section>
   </article>
 </div>
-<!-- Aqui é a seção de cursos-->
-<section class="courses-section" aria-label="Cursos disponíveis">
-  <h2 style="font-size: 20px; margin-bottom: 16px;">Cursos</h2>
-  <div class="courses-grid">
-    <div class="course-card" data-id="frontend">
-      <img src="assets/frontend.png" alt="" class="course-thumb">
-      <div class="course-info">
-        <div class="course-title">Introdução ao Front-end</div>
-        <div class="course-instructor">com Brizz</div>
-        <div class="course-tags">
-          <span>HTML</span><span>CSS</span><span>Responsivo</span>
-        </div>
-        <button class="course-btn">Ver mais</button>
-      </div>
-    </div>
-
-    <div class="course-card" data-id="javascript">
-      <img src="assets/jsdozero.webp" alt="" class="course-thumb">
-      <div class="course-info">
-        <div class="course-title">JavaScript do Zero</div>
-        <div class="course-instructor">com Pedro Alemar</div>
-        <div class="course-tags">
-          <span>JavaScript</span><span>Lógica</span><span>Web</span>
-        </div>
-        <button class="course-btn">Ver mais</button>
-      </div>
-    </div>
-
-    <div class="course-card" data-id="ux">
-      <img src="assets/UX-user-experience-o-que-e-principio-sbasicos-cargos-scaled.jpg" alt="" class="course-thumb">
-      <div class="course-info">
-        <div class="course-title">Fundamentos de UX Design</div>
-        <div class="course-instructor">com Maia</div>
-        <div class="course-tags">
-          <span>UX</span><span>Design</span><span>Figma</span>
-        </div>
-        <button class="course-btn">Ver mais</button>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!--aquele botão que fica na tela pra quando a pessoa tiver rolado mto poder twittar-->
 <button
   aria-label="Novo post"
@@ -306,6 +264,62 @@
     <button id="popup-post-submit-btn" class="post-btn" disabled>Postar</button>
   </div>
 </div>
+
+
+<!--seção de cursos-->
+<section class="courses-section" aria-label="Cursos disponíveis">
+  <h2 style="font-size: 20px; margin-bottom: 16px;">Cursos</h2>
+  <div class="courses-grid">
+    <div class="course-card" data-id="frontend">
+      <img src="assets/frontend.png" alt="" class="course-thumb">
+      <div class="course-info">
+        <div class="course-title">Introdução ao Front-end</div>
+        <div class="course-instructor">com Brizz</div>
+        <div class="course-tags">
+          <span>HTML</span><span>CSS</span><span>Responsivo</span>
+        </div>
+        <button class="course-btn">Acessar</button>
+      </div>
+    </div>
+
+    <div class="course-card" data-id="javascript">
+      <img src="assets/jsdozero.webp" alt="" class="course-thumb">
+      <div class="course-info">
+        <div class="course-title">JavaScript do Zero</div>
+        <div class="course-instructor">com Pedro Alemar</div>
+        <div class="course-tags">
+          <span>JavaScript</span><span>Lógica</span><span>Web</span>
+        </div>
+        <button class="course-btn">Acessar</button>
+      </div>
+    </div>
+
+    <div class="course-card" data-id="ux">
+      <img src="assets/UX-user-experience-o-que-e-principio-sbasicos-cargos-scaled.jpg" alt="" class="course-thumb">
+      <div class="course-info">
+        <div class="course-title">Fundamentos de UX Design</div>
+        <div class="course-instructor">com Maia</div>
+        <div class="course-tags">
+          <span>UX</span><span>Design</span><span>Figma</span>
+        </div>
+        <button class="course-btn">Acessar</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <div id="modal-course" class="modal-course" style="display: none;">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <img class="modal-thumb" src="" alt="Imagem do curso">
+        <h2 class="modal-title"></h2>
+        <p class="modal-instructor"></p>
+        <div class="modal-tags"></div>
+        <p id="modalDesc"></p> 
+        <button class="modal-action-btn"></button>
+      </div>
+    </div>
+
 
 
 </main>

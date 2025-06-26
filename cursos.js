@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Botão do modal
       if (tipo === "meu") {
-        modalActionBtn.textContent = "Continuar curso";
+        modalActionBtn.textContent = "Acessar Curso";
         modalActionBtn.onclick = () => {
           const cursoId = modalTitle.textContent.toLowerCase().replace(/\s+/g, '-');
           window.location.href = `curso.html?id=${encodeURIComponent(cursoId)}`;

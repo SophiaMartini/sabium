@@ -3,7 +3,14 @@
     document.getElementById('sidebar').classList.toggle('open-sidebar');
 });
 
-  // Trigger para ativar/desativar botão postar baseado no conteúdo
+document.addEventListener("input", (e) => {
+  if (e.target.tagName.toLowerCase() === "textarea") {
+    e.target.style.height = "auto"; // resetar
+    e.target.style.height = `${e.target.scrollHeight}px`; // expandir
+  }
+});
+
+  // ativar/desativar botão postar baseado no conteúdo
   function triggerInput(textarea) {
     const btn = textarea.closest("section, .modal-content").querySelector(".post-btn");
     if (!btn) return;
@@ -12,15 +19,15 @@
     else btn.classList.remove("enabled");
   }
 
-  // Novos posts no feed
+  // novo posts no feed
   const feedContainer = document.querySelector(".feed-container");
 
-  // Para gerar IDs únicos simples
+  // para gerar ids únicos simples
   function generateId() {
     return Math.floor(Math.random() * 1000000);
   }
 
-  // Renderizar post (em HTML) - para adicionar novo post no feed
+  // adicionar novo post no feed
   function renderPost(post) {
     const postEl = document.createElement("article");
     postEl.className = "post";
@@ -32,8 +39,17 @@ document.addEventListener("input", function (e) {
     e.target.style.height = e.target.scrollHeight + "px"; // aplica o novo
   }
 });
+const textearea = document.getElementById("post-textarea");
+textearea.addEventListener('keyup', (evente) => {
+  if (evente.key === 'Enter' && !evente.shiftKey) {
+    evente.preventDefault(); 
+    document.getElementById("post-submit-btn").click();
+  }
+  if (evente.key === 'click') {
+    textearea.blur();  }
+})
 
-    // Header do post
+    //"""header""" do post
     const header = document.createElement("div");
     header.className = "post-header";
 
@@ -58,7 +74,7 @@ document.addEventListener("input", function (e) {
 
     userInfo.appendChild(nameUsername);
 
-    // Tags
+    // tags
     const tagsDiv = document.createElement("div");
     tagsDiv.className = "tags";
     tagsDiv.setAttribute("aria-label", "Tags do post");
@@ -73,7 +89,7 @@ document.addEventListener("input", function (e) {
 
     postEl.appendChild(header);
 
-    // Conteúdo do post
+    //conteúdo do post
     const contentDiv = document.createElement("div");
     contentDiv.className = "post-content";
     const p = document.createElement("p");
@@ -81,7 +97,7 @@ document.addEventListener("input", function (e) {
     contentDiv.appendChild(p);
     postEl.appendChild(contentDiv);
 
-    // Anexos
+    //anexos
     if (post.attachments && post.attachments.length > 0) {
       const attachmentsDiv = document.createElement("div");
       attachmentsDiv.className = "attachments";
@@ -104,7 +120,7 @@ document.addEventListener("input", function (e) {
       postEl.appendChild(attachmentsDiv);
     }
 
-    // Ações: comentários, likes, share
+    // ações: comentários, likes, compartilhar
     const actionsDiv = document.createElement("div");
     actionsDiv.className = "post-actions";
 
@@ -132,7 +148,7 @@ document.addEventListener("input", function (e) {
 
     postEl.appendChild(actionsDiv);
 
-    // Seção de comentários (inicialmente escondida)
+    // seção de comentários  que fica escondida 
     const commentsSection = document.createElement("section");
     commentsSection.className = "comments-section";
     commentsSection.id = `comments-${post.id}`;
@@ -206,35 +222,35 @@ document.addEventListener("input", function (e) {
     });
 
     // Curtir/descurtir
-   document.querySelectorAll(".like-btn").forEach((likeBtn) => {
-  likeBtn.addEventListener("click", () => {
-    const icon = likeBtn.querySelector("i");
-    const countSpan = likeBtn.querySelector(".like-count");
+   // Curtir/descurtir (certo agora)
+likeBtn.addEventListener("click", () => {
+  const icon = likeBtn.querySelector("i");
+  const countSpan = likeBtn.querySelector(".like-count");
 
-    let liked = likeBtn.classList.contains("liked");
-    let currentLikes = parseInt(countSpan.textContent) || 0;
+  let liked = likeBtn.classList.contains("liked");
+  let currentLikes = parseInt(countSpan.textContent) || 0;
 
-    if (liked) {
-      currentLikes--;
-      likeBtn.classList.remove("liked");
-      likeBtn.setAttribute("aria-pressed", "false");
-      icon.classList.remove("fa-solid");
-      icon.classList.add("fa-regular");
-      icon.style.color = ""; // remove a cor vermelha
-    } else {
-      currentLikes++;
-      likeBtn.classList.add("liked");
-      likeBtn.setAttribute("aria-pressed", "true");
-      icon.classList.remove("fa-regular");
-      icon.classList.add("fa-solid");
-      icon.style.color = "red"; // deixa o coração vermelho
-    }
+  if (liked) {
+    currentLikes--;
+    likeBtn.classList.remove("liked");
+    likeBtn.setAttribute("aria-pressed", "false");
+    icon.classList.remove("fa-solid");
+    icon.classList.add("fa-regular");
+    icon.style.color = "";
+  } else {
+    currentLikes++;
+    likeBtn.classList.add("liked");
+    likeBtn.setAttribute("aria-pressed", "true");
+    icon.classList.remove("fa-regular");
+    icon.classList.add("fa-solid");
+    icon.style.color = "red";
+  }
 
-    countSpan.textContent = currentLikes;
-  });
+  countSpan.textContent = currentLikes;
 });
 
-    // Compartilhar (simples: copia o texto do post para clipboard)
+
+    // compartilhar (copia o texto do post)
     shareBtn.addEventListener("click", () => {
       const textToCopy = `${post.name} (@${post.username}): ${post.content}`;
       navigator.clipboard.writeText(textToCopy).then(() => {
@@ -397,17 +413,17 @@ document.addEventListener("input", function (e) {
     };
     posts.unshift(newPost);
 
-    // Limpa editor fixo
+    // limpa editor 
     postTextarea.value = "";
     fixedAttachments = [];
     renderAttachmentsPreview(fixedAttachments, attachmentsPreview);
     triggerInput(postTextarea);
 
-    // Atualiza feed
+    // atualiza feed
     renderAllPosts();
   });
 
-  // ======================== POPUP MODAL NOVO POST ==========================
+  //modal do novo post
 
   const modal = document.getElementById("modal-new-post");
   const openPopupBtn = document.getElementById("open-new-post-popup");
@@ -437,13 +453,6 @@ document.addEventListener("input", function (e) {
       modal.classList.remove("active");
       resetPopup();
     }
-  });
-
-  // Toolbar popup
-  modal.querySelectorAll(".editor-toolbar button").forEach(btn => {
-    btn.addEventListener("click", () => {
-      execCommand(btn.dataset.command);
-    });
   });
 
   // Trigger botão postar popup
@@ -524,3 +533,5 @@ document.addEventListener("input", function (e) {
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
+
+
